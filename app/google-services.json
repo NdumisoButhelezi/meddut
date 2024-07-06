@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1099280739830",
+    "project_id": "newdutmed",
+    "storage_bucket": "newdutmed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099280739830:android:9e66bff5fbd54021b3ebd7",
+        "android_client_info": {
+          "package_name": "com.example.newdutmed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnFOWtOagHNpoCwx4dwOHS9D-RVzS4ufY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

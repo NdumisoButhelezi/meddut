@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">NewDUTMed</string>
+    <string name="select_your_role">Select Your Role</string>
+    <string name="admin">Admin</string>
+    <string name="client">Client</string>
+    <string name="login" />
+    <string name="register" />
+    <string name="create_admin" />
+    <string name="password" />
+    <string name="email" />
+    <string name="create_client" />
+    <string name="first_name" />
+    <string name="last_name" />
+    <string name="confirm_password" />
+    <string name="phone_number" />
+    <string name="gender" />
+    <string name="year_of_birth" />
+    <string name="department" />
+    <string name="register_now" />
+    <string name="create_client_account" />
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="view_profile">View Profile</string>
+</resources>
