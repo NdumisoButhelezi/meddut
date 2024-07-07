@@ -15,7 +15,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
+            android:hint="@string/enter_your_email"
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -31,7 +31,7 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
+            android:hint="Enter your Password"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -40,7 +40,7 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login"
+        android:text="Let me in"
         android:layout_below="@id/layoutPassword"
         android:layout_marginTop="20dp"/>
 
@@ -49,7 +49,7 @@
         android:id="@+id/registerNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
+        android:text=""
         android:layout_centerHorizontal="true"
         android:layout_below="@id/btn_login"
         android:layout_marginTop="15dp"/>
@@ -59,7 +59,7 @@
         android:id="@+id/buttonCreateAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_admin"
+        android:text="Create Account"
         android:layout_below="@id/registerNow"
         android:layout_marginTop="20dp"/>
 

@@ -3,179 +3,131 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:focusableInTouchMode="true">
+        android:padding="16dp">
 
-        <!-- First Name -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutFirstName"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_horizontal"
+            android:text="@string/patient_registration"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textSize="24sp" />
 
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500">
+        <!-- Email Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Email"
+            android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/firstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/first_name"
-                android:inputType="textPersonName" />
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Last Name -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/last_name"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Email -->
+        <!-- Password Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Password"
+            android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:textColorHint="@color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Password -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500"
-            app:endIconMode="password_toggle">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/password"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Confirm Password -->
+        <!-- First Name Input -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500"
-            app:endIconMode="password_toggle">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="First Name"
+            android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/confirm_password"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Last Name Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Last Name"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Confirm Password"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Phone Number -->
+        <!-- Phone Number Input -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/phone_number"
+            android:layout_marginBottom="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/phone_number"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Gender -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutGender"
+        <!-- Gender Selection -->
+        <!-- Gender Selection Spinner -->
+        <Spinner
+            android:id="@+id/spinnerGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500">
+            android:layout_marginBottom="16dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/gender"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Year of Birth -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/layoutYearOfBirth"
+        <DatePicker
+            android:id="@+id/datePickerYearOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:hintEnabled="true"
-            app:hintAnimationEnabled="true"
-            app:boxStrokeColor="@color/purple_500">
+            android:calendarViewShown="false"
+            android:spinnersShown="true"
+            android:layout_marginBottom="16dp"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/yearOfBirth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="@string/year_of_birth"
-                android:hint="@string/year_of_birth"
-                android:inputType="number"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Register Button -->
+        <!-- Submit Button -->
         <Button
-            android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:background="@color/purple_500"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="24dp" />
-
-        <!-- Progress Bar -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone"
-            android:layout_marginTop="20dp"/>
+            android:text="@string/submit"
+            android:layout_marginTop="32dp"/>
 
     </LinearLayout>
 </ScrollView>

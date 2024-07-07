@@ -1,5 +1,6 @@
 package com.example.newdutmed;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ public class ClientRegister extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
 
+    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +32,15 @@ public class ClientRegister extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar); // Make sure you have a ProgressBar in your XML
 
-        // Initialize views
+// Initialize views
         firstName = findViewById(R.id.firstName);
         lastName = findViewById(R.id.lastName);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.confirmPassword);
         phoneNumber = findViewById(R.id.phoneNumber);
-        gender = findViewById(R.id.gender);
-        yearOfBirth = findViewById(R.id.yearOfBirth);
+        gender = findViewById(R.id.spinnerGender); // Updated to reflect the Spinner ID
+        yearOfBirth = findViewById(R.id.datePickerYearOfBirth); // Uncommented and updated
         registerButton = findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(view -> {

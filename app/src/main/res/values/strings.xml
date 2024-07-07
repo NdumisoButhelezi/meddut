@@ -3,16 +3,16 @@
     <string name="select_your_role">Select Your Role</string>
     <string name="admin">Admin</string>
     <string name="client">Client</string>
-    <string name="login" />
-    <string name="register" />
-    <string name="create_admin" />
-    <string name="password" />
-    <string name="email" />
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="create_admin">Create Admin</string>
+    <string name="password">Password</string>
+    <string name="emails">Email</string>
     <string name="create_client" />
     <string name="first_name" />
     <string name="last_name" />
     <string name="confirm_password" />
-    <string name="phone_number" />
+    <string name="phone_number">Phone Number</string>
     <string name="gender" />
     <string name="year_of_birth" />
     <string name="department" />
@@ -21,4 +21,13 @@
     <string name="name">Name</string>
     <string name="phone">Phone</string>
     <string name="view_profile">View Profile</string>
+    <string name="other">Other</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="submit">Submit</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="email">Your email</string>
+    <string name="patient_registration">Patient Registration</string>
+    <string name="go_to_profile">Go to Profile</string>
+
 </resources>

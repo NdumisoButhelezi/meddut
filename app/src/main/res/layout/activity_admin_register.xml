@@ -13,7 +13,7 @@
             android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/first_name"
+            android:hint="first_name"
             android:inputType="textPersonName"
             android:textColor="@color/black" />
 
@@ -21,7 +21,7 @@
             android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/last_name"
+            android:hint="last_name"
             android:inputType="textPersonName" />
 
         <EditText
@@ -42,7 +42,7 @@
             android:id="@+id/confirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/confirm_password"
+            android:hint="confirm_password"
             android:inputType="textPassword" />
 
         <EditText
@@ -57,7 +57,7 @@
             android:id="@+id/department"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/department"
+            android:hint="department"
             android:inputType="text"
             android:textColorHint="@color/black" />
 

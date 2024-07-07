@@ -4,6 +4,7 @@ package com.example.newdutmed;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,9 @@ public class AdminProfileActivity extends AppCompatActivity {
         textViewEmail = findViewById(R.id.textViewEmail);
         textViewPhone = findViewById(R.id.textViewPhone);
         textViewDepartment = findViewById(R.id.textViewDepartment);
+        Button adminProfileButton = findViewById(R.id.adminProfileButton);
+
+
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {

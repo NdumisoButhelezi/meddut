@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ClientLogin extends AppCompatActivity {
 
@@ -26,34 +27,48 @@ public class ClientLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
     private TextView textViewRegister;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mAuth = FirebaseAuth.getInstance(); // Ensure FirebaseAuth is initialized here
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            navigateToMainActivity();
-        }
-    }
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_login);
 
-        // Initialize FirebaseAuth instance
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
-        // Initialize UI components
-        editTextEmail = findViewById(R.id.email);
-        editTextPassword = findViewById(R.id.password);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.btn_login);
         progressBar = findViewById(R.id.progressBar);
         textViewRegister = findViewById(R.id.registerNow);
-        buttonCreateClient = findViewById(R.id.buttonCreateClient);
+        buttonCreateClient = findViewById(R. id.buttonCreateClient);
 
         setupButtonListeners();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            checkUserRoleAndRedirect(currentUser);
+        }
+    }
+
+    private void checkUserRoleAndRedirect(FirebaseUser user) {
+        db.collection("Users").document(user.getUid()).get().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult() != null) {
+                String role = task.getResult().getString("role");
+                if ("client".equals(role)) {
+                    navigateToMainActivity();
+                } else {
+                    redirectToLogin(); // Redirect non-client users to login
+                }
+            } else {
+                redirectToLogin(); // Redirect on failure to fetch user role
+            }
+        });
     }
 
     private void setupButtonListeners() {
@@ -97,8 +112,10 @@ public class ClientLogin extends AppCompatActivity {
                 .addOnCompleteListener(this, task -> {
                     progressBar.setVisibility(View.GONE);
                     if (task.isSuccessful()) {
-                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                        navigateToMainActivity();
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            checkUserRoleAndRedirect(user);
+                        }
                     } else {
                         handleLoginFailure(task);
                     }
@@ -106,25 +123,34 @@ public class ClientLogin extends AppCompatActivity {
     }
 
     private void handleLoginFailure(@NonNull Task<AuthResult> task) {
-        String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
-        switch (errorCode) {
-            case "ERROR_INVALID_EMAIL":
-                Toast.makeText(ClientLogin.this, "The email address is badly formatted.", Toast.LENGTH_LONG).show();
-                break;
-            case "ERROR_WRONG_PASSWORD":
-                Toast.makeText(ClientLogin.this, "The password is incorrect.", Toast.LENGTH_LONG).show();
-                break;
-            case "ERROR_USER_NOT_FOUND":
-                Toast.makeText(ClientLogin.this, "There is no user corresponding to this identifier.", Toast.LENGTH_LONG).show();
-                break;
-            default:
-                Toast.makeText(ClientLogin.this, "Authentication failed.", Toast.LENGTH_LONG).show();
-                break;
+        if (task.getException() instanceof FirebaseAuthException) {
+            String errorCode = ((FirebaseAuthException) task.getException()).getErrorCode();
+            switch (errorCode) {
+                case "ERROR_INVALID_EMAIL":
+                    Toast.makeText(ClientLogin.this, "The email address is badly formatted.", Toast.LENGTH_LONG).show();
+                    break;
+                case "ERROR_WRONG_PASSWORD":
+                    Toast.makeText(ClientLogin.this, "The password is incorrect.", Toast.LENGTH_LONG).show();
+                    break;
+                case "ERROR_USER_NOT_FOUND":
+                    Toast.makeText(ClientLogin.this, "There is no user corresponding to this identifier.", Toast.LENGTH_LONG).show();
+                    break;
+                default:
+                    Toast.makeText(ClientLogin.this, "Authentication failed.", Toast.LENGTH_LONG).show();
+                    break;
+            }
         }
+        redirectToLogin(); // Redirect to login on any failure
     }
 
     private void navigateToMainActivity() {
         Intent intent = new Intent(getApplicationContext(), ClientMainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void redirectToLogin() {
+        Intent intent = new Intent(this, ClientLogin.class);
         startActivity(intent);
         finish();
     }
