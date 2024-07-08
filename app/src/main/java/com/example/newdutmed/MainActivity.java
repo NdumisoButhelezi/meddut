@@ -7,8 +7,10 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.ai.client.generativeai.java.ChatFutures;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -50,8 +52,11 @@ public class MainActivity extends AppCompatActivity {
         String query = queryEditText.getText().toString();
         sendPromptProgressBar.setVisibility(ProgressBar.VISIBLE);
 
+        // Assuming you have a method to get a ChatFutures instance
+        ChatFutures chatModel = GeminiPro.getModel().chatFutures();
+
         // Use GeminiPro to send the query and handle the response
-        GeminiPro.getResponse(query, new ResponseCallBack() {
+        GeminiPro.getResponse(chatModel, query, new ResponseCallBack() {
             @Override
             public void onResponse(String response) {
                 runOnUiThread(() -> {
