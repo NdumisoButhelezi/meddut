@@ -9,45 +9,53 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewName"
+        <EditText
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:hint="Name"
             android:textSize="18sp"
             android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:id="@+id/textViewEmail"
+        <EditText
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:hint="Email"
             android:textSize="18sp"
             android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:id="@+id/textViewPhone"
+        <EditText
+            android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone"
+            android:hint="Phone"
             android:textSize="18sp"
             android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:id="@+id/textViewGender"
+        <EditText
+            android:id="@+id/editTextGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gender"
+            android:hint="Gender"
             android:textSize="18sp"
             android:layout_marginTop="16dp"/>
 
-        <TextView
-            android:id="@+id/textViewYearOfBirth"
+        <EditText
+            android:id="@+id/editTextYearOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Year of Birth"
+            android:hint="Year of Birth"
             android:textSize="18sp"
             android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/saveProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 </LinearLayout>

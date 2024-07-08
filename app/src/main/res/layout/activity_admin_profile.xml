@@ -10,37 +10,50 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewName"
+        <EditText
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:hint="@string/name"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:inputType="textPersonName"/>
 
-        <TextView
-            android:id="@+id/textViewEmail"
+        <EditText
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/email"
+            android:hint="@string/email"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:inputType="textEmailAddress"/>
 
-        <TextView
-            android:id="@+id/textViewPhone"
+        <EditText
+            android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/phone"
+            android:hint="@string/phone"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:inputType="phone"/>
 
-        <TextView
-            android:id="@+id/textViewDepartment"
+        <EditText
+            android:id="@+id/editTextDepartment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/department"
+            android:hint="@string/department"
             android:textSize="18sp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/saveProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+
 
         <!-- Add this inside your existing ConstraintLayout or LinearLayout in activity_admin_main.xml -->
 
